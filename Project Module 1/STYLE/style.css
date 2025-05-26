@@ -1,0 +1,169 @@
+/* Reset margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    height: 650px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevents overflow for better appearance */
+}
+
+/* Left side section (logo, description, buttons) */
+.left-side {
+    flex: 1;
+    background-color: #2b3a5b; /* Darker background for contrast */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px 0 0 15px; /* Rounded left side corners */
+}
+
+/* Logo styling */
+.left-side img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+}
+
+/* Description styling */
+.description {
+    font-size: 18px;
+    color: #b1b1b1;
+    margin-top: 20px;
+}
+
+/* Right side section (form area) */
+.right-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Heading styling */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Form container */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Input fields and select box styling */
+input, select {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+}
+
+/* Focus state for inputs and selects */
+input:focus, select:focus {
+    border-color: #5A3D8C;
+    outline: none;
+}
+
+/* Button styling */
+button {
+    padding: 12px;
+    background-color: #5A3D8C;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4A2D7D;
+}
+
+/* Terms & Conditions link styling */
+label input {
+    margin-right: 10px;
+}
+
+a {
+    color: #5A3D8C;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer (optional) */
+footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    color: #999;
+}
+
+/* Media query for smaller screens (responsive design) */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .left-side {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .right-side {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input, select {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,369 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #F2EB95;
+  height: 100vh;
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.sidebar img {
+  width: 120px;
+  height: 100px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.search-box input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 140px;
+  margin-right: 10px;
+}
+
+/* Menu Titles */
+.menu-title {
+  cursor: pointer;
+  font-weight: bold;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.menu-title::before {
+  content: "▣";
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.dropdown-content {
+  display: none;
+  margin-left: 18px;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: #2b4d71;
+  display: block;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Topbar */
+.topbar {
+  background-color: #F2EB95;
+  height: 100px;
+  margin-left: 220px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Profile Section */
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e7eaee;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.dropdown-icon {
+  font-size: 14px;
+  color: black;
+}
+
+/* Dropdown in Topbar */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content-top {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-size: 12px;
+}
+
+.dropdown:hover .dropdown-content-top {
+  display: block;
+}
+
+.dropdown-content-top a {
+  color: black;
+  padding: 6px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Content */
+.content {
+  margin-left: 220px;
+  padding: 20px;
+  background-color: #ffffff;
+  min-height: 90vh;
+}
+
+/* Profile Data Styling */
+.profile-data {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.profile-data h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.profile-data .field {
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.profile-data .field label {
+  font-weight: bold;
+  color: #333;
+  width: 200px;
+}
+
+.profile-data .field span {
+  color: #555;
+  font-style: italic;
+}
+
+/* Modern Table Styling for Profile Management */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+table th, table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table th {
+  background-color: #4CAF50;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 13px;
+}
+
+table td {
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+}
+
+table tr:nth-child(even) td {
+  background-color: #f9f9f9;
+}
+
+table tr:hover td {
+  background-color: #f1f7f9;
+  transition: background-color 0.3s ease;
+}
+
+table a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+/* Filter and Add User Button Styling */
+.content a[href*="registration.php"] {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.content label[for="roleFilter"] {
+  margin-left: 15px;
+  font-weight: bold;
+}
+
+#roleFilter {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-left: 5px;
+}
+
+/* Footer */
+.footer {
+  background-color: #d3d3d3;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* Membership Management Table and Action Buttons */
+.container2 {
+  margin-top: 20px;
+}
+
+#userSearch {
+  width: 50%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.container2 table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.container2 table thead {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.container2 table th,
+.container2 table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.container2 table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 2px;
+  transition: all 0.3s ease;
+}
+
+.action-btn.accept {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.action-btn.reject {
+  background-color: #f44336;
+  color: white;
+}
+
+.action-btn.view-card {
+  background-color: #008CBA;
+  color: white;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+.card-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.card-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.close-modal {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.card-modal-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}

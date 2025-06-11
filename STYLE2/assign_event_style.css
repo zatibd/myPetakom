@@ -1,0 +1,77 @@
+/* General content styling */
+.content {
+  margin-left: 250px; /* accounts for sidebar */
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Page title */
+#assign-committee {
+  font-size: 2rem;
+  color: #800000;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #800000;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+th {
+  background-color: #880808;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+tr:hover {
+  background-color: #ffe6e6;
+  transition: 0.3s;
+}
+
+/* Button styles */
+button {
+  background-color: #880808;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #b30000;
+}
+
+/* Footer style */
+.footer {
+  background-color: #800000;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

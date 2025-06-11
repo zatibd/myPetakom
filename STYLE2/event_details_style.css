@@ -1,0 +1,106 @@
+.content {
+  padding: 20px;
+  background-color: #fff;
+  margin-left: 250px; /* Adjust based on sidebar width */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content h1 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.content td {
+  padding: 12px 10px;
+  vertical-align: top;
+  font-size: 16px;
+  color: #333;
+}
+
+.content td:first-child {
+  width: 200px;
+  color: #000;
+}
+
+.content a button,
+.content form button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.content a button:hover,
+.content form button:hover {
+  background-color: #0056b3;
+}
+
+.content a {
+  text-decoration: none;
+}
+
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #666;
+  background-color: #f0f0f0;
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
+}
+
+/* Style the top Back button */
+.content a button[type="button"] {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  margin-bottom: 20px;
+}
+
+.content a button[type="button"]:hover {
+  background-color: #f0f0f0;
+}
+
+.center-content {
+  max-width: 600px; /* Adjust width as needed */
+  margin: 0 auto;
+}
+
+/* Align Edit and QR Code buttons to the right */
+.button-group {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.button-group form {
+  display: inline;
+}
+
+.button-group button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: #0056b3;
+}
+

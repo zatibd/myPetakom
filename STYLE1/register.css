@@ -1,0 +1,211 @@
+/* Reset margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    height: 650px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Left side section */
+.left-side {
+    flex: 1;
+    background-color: #2b3a5b;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    border-radius: 15px 0 0 15px;
+}
+
+/* Logo styling */
+.left-side img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+}
+
+/* Description styling */
+.description {
+    font-size: 18px;
+    color: #b1b1b1;
+    margin: 30px 0 20px;
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 220px;
+}
+
+/* Buttons inside the left side */
+.button-container button {
+    padding: 12px 20px;
+    width: 100%;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.button-container button:hover {
+    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Right side section (form area) */
+.right-side {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Inputs and selects */
+input, select {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+    background-color: #f9f9f9;
+}
+
+input:focus, select:focus {
+    border-color: #5A3D8C;
+    outline: none;
+}
+
+/* Terms & Conditions link styling */
+label input {
+    margin-right: 10px;
+}
+
+a {
+    color: #5A3D8C;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Gradient button (used for Register button too) */
+.gradient-button {
+    padding: 14px;
+    width: 100%;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.gradient-button:hover {
+    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Footer (optional) */
+footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+    color: #999;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .left-side {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .right-side {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input, select {
+        font-size: 16px;
+    }
+
+    .button-container {
+        max-width: 100%;
+        width: 80%;
+    }
+}

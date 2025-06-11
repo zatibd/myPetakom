@@ -1,0 +1,246 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #F2EB95;
+  height: 100vh;
+  position: fixed;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.sidebar img {
+  width: 120px;
+  height: 100px;
+  display: block;
+}
+
+/* Search */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.search-box input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 120px;
+  margin-right: 5px;
+}
+
+/* Menu Titles */
+.menu-title {
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.menu-title::before {
+  content: "▣";
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.dropdown-content {
+  display: none;
+  margin-left: 18px;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  color: #2b4d71;
+  display: block;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* Topbar */
+.topbar {
+  background-color: #F2EB95;
+  height: 100px;
+  margin-left: 220px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Profile Section */
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e7eaee;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.dropdown-icon {
+  font-size: 14px;
+  color: black;
+}
+
+/* Dropdown in Topbar */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content-top {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-size: 12px;
+}
+
+.dropdown:hover .dropdown-content-top {
+  display: block;
+}
+
+.dropdown-content-top a {
+  color: black;
+  padding: 6px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Content */
+.content {
+  margin-left: 220px;
+  padding: 20px;
+  background-color: #ffffff;
+  min-height: 90vh;
+}
+
+/* Footer */
+.footer {
+  background-color: #d3d3d3;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+/* Main Content */
+.content {
+  margin-left: 220px;
+  padding: 30px;
+  background-color: #ffffff;
+  min-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Form Styling */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd; /* Light border around the form */
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.field input[type="email"],
+.field input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.field input[type="email"]:focus,
+.field input[type="text"]:focus {
+  border-color: #4CAF50; /* Green border on focus */
+  outline: none;
+}
+
+.field button {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%; /* Full width for the button */
+}
+
+.field button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Footer */
+.footer {
+  background-color: #d3d3d3;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .field input[type="email"],
+  .field input[type="text"] {
+    padding: 8px;
+  }
+}

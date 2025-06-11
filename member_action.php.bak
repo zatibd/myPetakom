@@ -1,0 +1,37 @@
+<?php
+$link = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+mysqli_select_db($link, "mypetakom") or die(mysqli_error($link));
+
+if (!isset($_GET['action']) || !isset($_GET['id'])) {
+    http_response_code(400);
+    echo "Missing parameters";
+    exit;
+}
+
+$action = $_GET['action'];
+$user_id = $_GET['id'];
+
+if ($action === 'approve') {
+    $status = 'approved';
+} elseif ($action === 'reject') {
+    $status = 'rejected';
+} else {
+    http_response_code(400);
+    echo "Invalid action";
+    exit;
+}
+
+$query = "UPDATE member 
+          SET member_approval = '$status', 
+              member_status = '$status' 
+          WHERE student_id = '$user_id'";
+
+if (mysqli_query($link, $query)) {
+    echo "Status updated to $status";
+} else {
+    http_response_code(500);
+    echo "Database error: " . mysqli_error($link);
+}
+
+mysqli_close($link);
+?>

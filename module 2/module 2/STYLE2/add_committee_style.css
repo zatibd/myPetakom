@@ -1,0 +1,14 @@
+.content {
+  padding: 20px;
+  background-color: #fff;
+  margin-left: 250px; /* Adjust based on sidebar width */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content h1 {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: left;
+  color: #333;
+}

@@ -1,0 +1,94 @@
+.content {
+  padding: 20px;
+  background-color: #fff;
+  margin-left: 150px; /* Adjust based on sidebar width */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content h1 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+/* Form Table Styling */
+.content table {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-spacing: 15px;
+}
+
+.content td {
+  vertical-align: top;
+  font-size: 16px;
+  color: #444;
+}
+
+.content input[type="text"],
+.content input[type="date"],
+.content input[type="file"],
+.content textarea {
+  padding: 10px;
+  font-size: 15px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+/* Location search row */
+.content input#locationInput {
+  width: 70%;
+  display: inline-block;
+}
+
+.content button[type="button"] {
+  padding: 10px 14px;
+  margin-left: 10px;
+  font-size: 14px;
+  border: none;
+  background-color: #c85a7c;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.content button[type="button"]:hover {
+  background-color: #b0476b;
+}
+
+/* Save button */
+.content button[type="submit"] {
+  display: block;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  padding: 10px 24px;
+  margin: 20px auto 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.content button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Map Paragraph */
+#map + p {
+  font-size: 13px;
+  color: #777;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #999;
+  font-size: 14px;
+}

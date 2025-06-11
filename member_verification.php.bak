@@ -1,0 +1,182 @@
+<?php
+// Database connection
+$link = mysqli_connect("localhost", "root", "") or die(mysqli_connect_error());
+mysqli_select_db($link, "mypetakom") or die(mysqli_error($link));
+
+// Query to fetch student and their card data
+$query = "
+    SELECT u.user_id, u.user_name, m.member_approval, m.student_card
+    FROM user u
+    JOIN member m ON u.user_id = m.student_id
+    WHERE LOWER(u.user_role) = 'student'
+";
+
+$result = mysqli_query($link, $query) or die("Query error: " . mysqli_error($link));
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Membership Approval - MyPetakom Dashboard</title>
+  <link rel="stylesheet" href="STYLE1/admin_dashboard.css" />
+  <style>
+    .status-approved { color: green; font-weight: bold; font-size: 18px; }
+    .status-rejected { color: red; font-weight: bold; font-size: 18px; }
+    .status-pending { color: orange; font-weight: bold; font-size: 18px; }
+    .approve-btn, .reject-btn {
+      padding: 5px 10px;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 2px;
+    }
+    .approve-btn { background-color: green; }
+    .reject-btn { background-color: red; }
+    .disabled-btn {
+      background-color: grey !important;
+      cursor: not-allowed !important;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <img src="IMAGES/LogoPetakom.png" alt="PETAKOM Logo" />
+  <div class="menu">
+    <div class="menu-title" onclick="window.location.href='admin_home.php'">HOME</div>
+    <div class="menu-title" onclick="toggleMenu('membership')">MEMBERSHIP</div>
+    <div class="dropdown-content" id="membership">
+      <a href="member_verification.php">Verification Status</a>
+      <a href="view_member.php">View Member</a>
+    </div>
+    <div class="menu-title" onclick="toggleMenu('event')">EVENT</div>
+    <div class="dropdown-content" id="event">
+      <a href="#">Attendance Records</a>
+    </div>
+    <div class="menu-title" onclick="toggleMenu('merit')">MERIT</div>
+    <div class="dropdown-content" id="merit">
+      <a href="#">Merit Claim</a>
+      <a href="#">Merit Application</a>
+    </div>
+  </div>
+</div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="dropdown">
+    <div class="profile-wrapper">
+      <div class="profile-circle">N.</div>
+      <span class="dropdown-icon">▼</span>
+    </div>
+    <div class="dropdown-content-top">
+      <a href="administrator_profile.php">Profile</a>
+      <a href="calendar.php">Calendar</a>
+      <a href="#">Report</a>
+      <a href="logout.php">Log Out</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+  <table>
+    <thead>
+      <tr>
+        <th>Student ID</th>
+        <th>Student Name</th>
+        <th>Student Card</th>
+        <th>Verification Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      if (mysqli_num_rows($result) > 0) {
+          while ($row = mysqli_fetch_assoc($result)) {
+              if ($row['student_card']) {
+                  $imageData = $row['student_card'];
+                  $imageType = 'image/jpeg'; // Static assumption
+                  $base64Image = base64_encode($imageData);
+
+                  echo "<tr data-id='" . $row['user_id'] . "'>
+                      <td>" . $row['user_id'] . "</td>
+                      <td>" . $row['user_name'] . "</td>
+                      <td><img src='data:$imageType;base64,$base64Image' style='width: 100px;'></td>
+                      <td>";
+
+                  if ($row['member_approval'] === NULL) {
+                      echo "<span class='status-pending'>Pending</span>";
+                  } elseif ($row['member_approval'] === 'approved') {
+                      echo "<span class='status-approved'>✔ Approved</span>";
+                  } else {
+                      echo "<span class='status-rejected'>❌ Rejected</span>";
+                  }
+
+                  echo "</td>
+                      <td>
+                        <button class='approve-btn' data-action='approve'>Approve</button>
+                        <button class='reject-btn' data-action='reject'>Reject</button>
+                      </td>
+                    </tr>";
+              }
+          }
+      } else {
+          echo "<tr><td colspan='5'>No students found</td></tr>";
+      }
+      ?>
+    </tbody>
+  </table>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  @MyPetakom 2024/2025
+</div>
+
+<script>
+  function toggleMenu(id) {
+    const content = document.getElementById(id);
+    content.style.display = content.style.display === "block" ? "none" : "block";
+  }
+
+  document.querySelectorAll('.approve-btn, .reject-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      if (this.classList.contains('disabled-btn')) return;
+
+      const row = this.closest('tr');
+      const userId = row.getAttribute('data-id');
+      const action = this.getAttribute('data-action');
+      const statusCell = row.querySelector('td:nth-child(4)');
+
+      fetch(`member_action.php?action=${action}&id=${userId}`)
+        .then(response => {
+          if (!response.ok) throw new Error('Failed to update');
+          return response.text();
+        })
+        .then(result => {
+          if (action === 'approve') {
+            statusCell.innerHTML = '<span class="status-approved">✔ Approved</span>';
+          } else {
+            statusCell.innerHTML = '<span class="status-rejected">❌ Rejected</span>';
+          }
+
+          row.querySelectorAll('.approve-btn, .reject-btn').forEach(btn => {
+            btn.classList.add('disabled-btn');
+            btn.disabled = true;
+          });
+        })
+        .catch(error => {
+          alert('Error: ' + error);
+        });
+    });
+  });
+</script>
+
+</body>
+</html>
+
+<?php mysqli_close($link); ?>
